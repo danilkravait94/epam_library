@@ -1,0 +1,59 @@
+﻿@model Library.Models.FormViewModel
+@{
+    ViewBag.Title = "Form";
+}
+
+
+@using (Html.BeginForm("Index", "Form", FormMethod.Post, new { @class = "form" }))
+{
+    <h3 class="center">Form</h3>
+    <br />
+    <div class="form-group">
+        <label for="name">Name</label>
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="surname">Surname</label>
+        @Html.EditorFor(model => model.Surname)
+        @Html.ValidationMessageFor(x => x.Surname, "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div>
+        <h4>Where are you from?</h4>
+        @CountryRadio(ViewBag.Countrylist)
+        @Html.ValidationMessage("Country", "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div>
+        <h4>Choose smth</h4>
+        @SmthCheck(ViewBag.smthlist)
+        @Html.ValidationMessage("smths", "", new { @class = "text-danger" })
+    </div>
+    <div class="center">
+        <button type="submit" name="submit" class="btn btn-light">Submit</button>
+    </div>
+    <br />
+}
+
+@helper CountryRadio(IEnumerable<string> countrylist)
+{
+    foreach (var country in countrylist)
+    {
+        <div>
+            @Html.RadioButton("Country", country)
+            @Html.Label(country, country)
+        </div>
+    }
+}
+
+@helper SmthCheck(IEnumerable<string> smthlist)
+{
+    foreach (var smth in smthlist)
+    {
+        <div>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="@smth" value="@smth">
+            @Html.Label(smth, smth)
+        </div>
+    }
+}

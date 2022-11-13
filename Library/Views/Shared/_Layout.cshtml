@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/scripts/jquery-3.4.1.js")
+    @Scripts.Render("~/scripts/jquery.validate.js")
+    @Scripts.Render("~/scripts/jquery.validate.unobtrusive.js")
+    @Scripts.Render("~/Scripts/script.js")
+</head>
+<body>
+    <div class="container">
+        <div class="row head">
+            <div class="col-sm-2 col-lg-2">
+                <img class="img " src="~/Content/Images/Icon.png" />
+                <h5>&nbsp&nbsp&nbspLibrary</h5>
+            </div>
+            <h1 class="col-lg-8 center ">The main Library in Ukraine</h1>
+            <div class="col-sm-2 col-lg-2">
+            </div>
+        </div>
+            <div class="backsite">
+                <div class="row">
+                    <div class="col-lg-10">
+                        @RenderBody()
+                    </div>
+                    <div class="col-lg-2">
+                        <ul>
+                            <li>@Html.ActionLink("News", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Reviews", "Index", "Guest")</li>
+                            <li>@Html.ActionLink("Form", "Index", "Form")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
+        <hr />
+        <footer class="center">
+            <p>&copy; @DateTime.Now.Year - danilkrava@ukr.net</p>
+            @Html.ActionLink("Home", "Index", "Home")
+        </footer>
+    </div>
+</body>
+</html>
+

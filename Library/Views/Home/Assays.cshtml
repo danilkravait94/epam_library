@@ -1,0 +1,32 @@
+﻿@model Library.Pading.IndexViewAssay
+@using Library.Helpers
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@foreach (var item in Model.Assays)
+{
+    <h4 class="alert-heading">
+        @item.Title
+    </h4>
+    <h6>@item.Author</h6>
+    <p class="show-read-more">
+        @item.Text
+    </p>
+
+    foreach (var tag in item.Tags)
+    {
+        <a href="@Url.Action("Assays", "Home", new { page = 1, tag = tag })">#@tag</a>
+    }
+    <br />
+    <input type="text" name=@item.Id list="tagName" />
+    <datalist id="tagName">
+        @Html.MakeTagList((string[])ViewBag.Tags);
+    </datalist>
+    <button type="submit" name="Add">Add tag</button>
+    <hr />
+}
+<br />
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Assays", new { page = x }));
+</div>

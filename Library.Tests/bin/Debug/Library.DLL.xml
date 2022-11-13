@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Library.DLL</name>
+    </assembly>
+    <members>
+        <member name="T:Library.DLL.EF.DBInitializer">
+            <summary>
+            Initializer of DB
+            </summary>
+        </member>
+        <member name="M:Library.DLL.EF.DBInitializer.Seed(Library.DLL.EF.LibraryContext)">
+            <summary>
+            Method for initializer
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Library.DLL.EF.LibraryContext">
+            <summary>
+            Context of db
+            </summary>
+        </member>
+        <member name="M:Library.DLL.EF.LibraryContext.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Library.DLL.EF.LibraryContext.Assays">
+            <summary>
+            DbSet of Assays
+            </summary>
+        </member>
+        <member name="P:Library.DLL.EF.LibraryContext.Forms">
+            <summary>
+            DbSet of Forms
+            </summary>
+        </member>
+        <member name="P:Library.DLL.EF.LibraryContext.Reviews">
+            <summary>
+            DbSet of Reviews
+            </summary>
+        </member>
+        <member name="T:Library.DLL.Entities.Assay">
+            <summary>
+            Assay on a home page
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Assay.AssayID">
+            <summary>
+            Primary key
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Assay.Author">
+            <summary>
+            Author of an assay
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Assay.Title">
+            <summary>
+            title of an assay
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Assay.Text">
+            <summary>
+            The main part
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Entities.Assay.#ctor">
+            <summary>
+            no parameter constructor
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Entities.Assay.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Main constructor
+            </summary>
+            <param name="author">autor of the assay</param>
+            <param name="title">assay`s title</param>
+            <param name="text">a main part</param>
+        </member>
+        <member name="T:Library.DLL.Entities.Form">
+            <summary>
+            form request
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Form.FormID">
+            <summary>
+            Primary key
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Form.Name">
+            <summary>
+            A name of person
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Form.Surname">
+            <summary>
+            A surname of person
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Form.Country">
+            <summary>
+            Country that person is from
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Form.smths">
+            <summary>
+            list of some values
+            </summary>
+        </member>
+        <member name="T:Library.DLL.Entities.Review">
+            <summary>
+            Review object class
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Review.ReviewID">
+            <summary>
+            Primary Key
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Review.ReviewText">
+            <summary>
+            Text of review
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Review.ReviewName">
+            <summary>
+            A name of author the review
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Entities.Review.ReviewDate">
+            <summary>
+            Date of posting review
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Entities.Review.#ctor(System.String,System.String,System.DateTime)">
+            <summary>
+            constructor
+            </summary>
+            <param name="reviewText"> text of review</param>
+            <param name="reviewName"> author`s name</param>
+            <param name="reviewDate">Date of posting</param>
+        </member>
+        <member name="M:Library.DLL.Entities.Review.#ctor">
+            <summary>
+            no parameter constructor
+            </summary>
+        </member>
+        <member name="T:Library.DLL.Interfaces.IRepository`1">
+            <summary>
+            Interface for database
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IRepository`1.GetAll">
+            <summary>
+            Get all
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IRepository`1.Get(System.Int32)">
+            <summary>
+            Get by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IRepository`1.Find(System.Func{`0,System.Boolean})">
+            <summary>
+            Find by predicate
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IRepository`1.Create(`0)">
+            <summary>
+            Create an item
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IRepository`1.Update(`0)">
+            <summary>
+            update an item
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IRepository`1.Delete(`0)">
+            <summary>
+            Delete an item
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IRepository`1.Delete(System.Int32)">
+            <summary>
+            Delete by id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:Library.DLL.Interfaces.IUnitOfWork">
+            <summary>
+            pattern UnitOfWork interface
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Interfaces.IUnitOfWork.Assays">
+            <summary>
+            Repository for working with assays
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Interfaces.IUnitOfWork.Forms">
+            <summary>
+            Repository for working with forms
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Interfaces.IUnitOfWork.Reviews">
+            <summary>
+            Repository for working with reviews
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Interfaces.IUnitOfWork.Save">
+            <summary>
+            save method
+            </summary>
+        </member>
+        <member name="T:Library.DLL.Services.AssayRepository">
+            <summary>
+            Service for working with assays
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.#ctor(Library.DLL.EF.LibraryContext)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Create(Library.DLL.Entities.Assay)">
+            <summary>
+            Create and add to database
+            </summary>
+            <param name="item">created item</param>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Delete(Library.DLL.Entities.Assay)">
+            <summary>
+            Delete an item from db
+            </summary>
+            <param name="item">deleted item</param>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Delete(System.Int32)">
+            <summary>
+            Delete by id
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="F:Library.DLL.Services.AssayRepository.disposed">
+            <summary>
+            Private bool type for disposed
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Dispose(System.Boolean)">
+            <summary>
+            dispose with param
+            </summary>
+            <param name="disposing"> disposing bool</param>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Dispose">
+            <summary>
+            public implemention of dispose
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Find(System.Func{Library.DLL.Entities.Assay,System.Boolean})">
+            <summary>
+            Find a list of assays
+            </summary>
+            <param name="predicate"></param>
+            <returns>IEnumerable of assay</returns>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Get(System.Int32)">
+            <summary>
+            Get an assay by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.GetAll">
+            <summary>
+            get all assays
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Services.AssayRepository.Update(Library.DLL.Entities.Assay)">
+            <summary>
+            Change item in database
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:Library.DLL.Services.FormRepository">
+            <summary>
+            Service for working with forms
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.#ctor(Library.DLL.EF.LibraryContext)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Create(Library.DLL.Entities.Form)">
+            <summary>
+            Create and add to database
+            </summary>
+            <param name="item">created item</param>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Delete(Library.DLL.Entities.Form)">
+            <summary>
+            Delete an item from db
+            </summary>
+            <param name="item">deleted item</param>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Delete(System.Int32)">
+            <summary>
+            Delete by id
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Find(System.Func{Library.DLL.Entities.Form,System.Boolean})">
+            <summary>
+            Find a list of forms
+            </summary>
+            <param name="predicate"></param>
+            <returns>IEnumerable of forms</returns>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Get(System.Int32)">
+            <summary>
+            Get a form by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.GetAll">
+            <summary>
+            get all forms
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Update(Library.DLL.Entities.Form)">
+            <summary>
+            Change item in database
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="F:Library.DLL.Services.FormRepository.disposed">
+            <summary>
+            Private bool type for disposed
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Dispose(System.Boolean)">
+            <summary>
+            dispose with param
+            </summary>
+            <param name="disposing"> disposing bool</param>
+        </member>
+        <member name="M:Library.DLL.Services.FormRepository.Dispose">
+            <summary>
+            public implemention of dispose
+            </summary>
+        </member>
+        <member name="T:Library.DLL.Services.ReviewRepository">
+            <summary>
+            Service for working with reviews
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.#ctor(Library.DLL.EF.LibraryContext)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Create(Library.DLL.Entities.Review)">
+            <summary>
+            Create and add to database
+            </summary>
+            <param name="item">created item</param>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Delete(Library.DLL.Entities.Review)">
+            <summary>
+            Delete an item from db
+            </summary>
+            <param name="item">deleted item</param>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Delete(System.Int32)">
+            <summary>
+            Delete by id
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Find(System.Func{Library.DLL.Entities.Review,System.Boolean})">
+            <summary>
+            Find a list of review
+            </summary>
+            <param name="predicate"></param>
+            <returns>IEnumerable of forms</returns>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Get(System.Int32)">
+            <summary>
+            Get a review by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.GetAll">
+            <summary>
+            get all Reviews
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Update(Library.DLL.Entities.Review)">
+            <summary>
+            Change item in database
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="F:Library.DLL.Services.ReviewRepository.disposed">
+            <summary>
+            Private bool type for disposed
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Dispose(System.Boolean)">
+            <summary>
+            dispose with param
+            </summary>
+            <param name="disposing"> disposing bool</param>
+        </member>
+        <member name="M:Library.DLL.Services.ReviewRepository.Dispose">
+            <summary>
+            public implemention of dispose
+            </summary>
+        </member>
+        <member name="T:Library.DLL.Services.UnitOfWork">
+            <summary>
+            Class for work with DataBase
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.UnitOfWork.#ctor(System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="P:Library.DLL.Services.UnitOfWork.Assays">
+            <summary>
+            Get Assays
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Services.UnitOfWork.Forms">
+            <summary>
+            Get form repository
+            </summary>
+        </member>
+        <member name="P:Library.DLL.Services.UnitOfWork.Reviews">
+            <summary>
+            Get form repository
+            </summary>
+        </member>
+        <member name="M:Library.DLL.Services.UnitOfWork.Save">
+            <summary>
+            Save DataBase
+            </summary>
+        </member>
+    </members>
+</doc>

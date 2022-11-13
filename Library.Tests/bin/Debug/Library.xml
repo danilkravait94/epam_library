@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Library</name>
+    </assembly>
+    <members>
+        <member name="T:Library.BundleConfig">
+            <summary>
+            bundle config class
+            </summary>
+        </member>
+        <member name="M:Library.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            Method for registration bundles
+            </summary>
+            <param name="bundles"></param>
+        </member>
+        <member name="T:Library.FilterConfig">
+            <summary>
+            filter config class
+            </summary>
+        </member>
+        <member name="M:Library.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            registration method
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="T:Library.RouteConfig">
+            <summary>
+            route config class
+            </summary>
+        </member>
+        <member name="M:Library.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            registration method
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:Library.Controllers.FormController">
+            <summary>
+            controller for work with form
+            </summary>
+        </member>
+        <member name="F:Library.Controllers.FormController.formService">
+            <summary>
+            Get method
+            </summary>
+            <returns>Form view</returns>
+        </member>
+        <member name="M:Library.Controllers.FormController.#ctor(Library.BLL.Interfaces.IFormService)">
+            <summary>
+            no parameters constructor 
+            </summary>
+        </member>
+        <member name="M:Library.Controllers.FormController.Index">
+            <summary>
+            Get a empty form 
+            </summary>
+            <returns> a cshtml form</returns>
+        </member>
+        <member name="M:Library.Controllers.FormController.Index(System.Web.Mvc.FormCollection)">
+            <summary>
+            Get a result 
+            </summary>
+            <param name="collection"> FormCollection</param>
+            <returns>A cshtml result</returns>
+        </member>
+        <member name="T:Library.Controllers.GuestController">
+            <summary>
+            Review controller
+            </summary>
+        </member>
+        <member name="M:Library.Controllers.GuestController.#ctor(Library.BLL.Interfaces.IReviewService)">
+            <summary>
+            no parameter constructor
+            </summary>
+        </member>
+        <member name="M:Library.Controllers.GuestController.Index">
+            <summary>
+            Get a view of reviews
+            </summary>
+            <returns>Reviews</returns>
+        </member>
+        <member name="M:Library.Controllers.GuestController.Index(System.Web.Mvc.FormCollection)">
+            <summary>
+            Post a review
+            </summary>
+            <param name="collection">FormCollection</param>
+            <returns> actionResult</returns>
+        </member>
+        <member name="M:Library.Controllers.GuestController.CheckIfExist(System.String)">
+            <summary>
+            Chack that the name is used
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Library.Controllers.HomeController">
+            <summary>
+            Home controller
+            </summary>
+        </member>
+        <member name="M:Library.Controllers.HomeController.#ctor(Library.BLL.Interfaces.IAssayService)">
+            <summary>
+            no parameter controller
+            </summary>
+        </member>
+        <member name="M:Library.Controllers.HomeController.Index">
+            <summary>
+            Get view with assays
+            </summary>
+            <returns>ActionResult</returns>
+        </member>
+        <member name="T:Library.MvcApplication">
+            <summary>
+            application start class
+            </summary>
+        </member>
+        <member name="M:Library.MvcApplication.Application_Start">
+            <summary>
+            start method
+            </summary>
+        </member>
+        <member name="T:Library.Helpers.ListMaker">
+            <summary>
+            Class for crating list
+            </summary>
+        </member>
+        <member name="M:Library.Helpers.ListMaker.CreateList(System.Web.Mvc.HtmlHelper,System.Collections.Generic.List{System.String})">
+            <summary>
+            mehtod that create a list
+            </summary>
+            <param name="html"></param>
+            <param name="smths">list of smths</param>
+            <returns>Htmlstring with a list</returns>
+        </member>
+        <member name="T:Library.Models.AssayViewModel">
+            <summary>
+            Bll Assay on a home page
+            </summary>
+        </member>
+        <member name="P:Library.Models.AssayViewModel.Author">
+            <summary>
+            Author of an assay
+            </summary>
+        </member>
+        <member name="P:Library.Models.AssayViewModel.Title">
+            <summary>
+            title of an assay
+            </summary>
+        </member>
+        <member name="P:Library.Models.AssayViewModel.Text">
+            <summary>
+            The main part
+            </summary>
+        </member>
+        <member name="M:Library.Models.AssayViewModel.#ctor">
+            <summary>
+            no parameter constructor
+            </summary>
+        </member>
+        <member name="M:Library.Models.AssayViewModel.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Main constructor
+            </summary>
+            <param name="author">autor of the assay</param>
+            <param name="title">assay`s title</param>
+            <param name="text">a main part</param>
+        </member>
+        <member name="T:Library.Models.FormViewModel">
+            <summary>
+            Form view model
+            </summary>
+        </member>
+        <member name="P:Library.Models.FormViewModel.Name">
+            <summary>
+            A name of person
+            </summary>
+        </member>
+        <member name="P:Library.Models.FormViewModel.Surname">
+            <summary>
+            A surname of person
+            </summary>
+        </member>
+        <member name="P:Library.Models.FormViewModel.Country">
+            <summary>
+            Country that person is from
+            </summary>
+        </member>
+        <member name="P:Library.Models.FormViewModel.smths">
+            <summary>
+            list of some values
+            </summary>
+        </member>
+        <member name="T:Library.Models.ReviewViewModel">
+            <summary>
+            Review object class
+            </summary>
+        </member>
+        <member name="P:Library.Models.ReviewViewModel.ReviewText">
+            <summary>
+            Text of review
+            </summary>
+        </member>
+        <member name="P:Library.Models.ReviewViewModel.ReviewName">
+            <summary>
+            A name of author the review
+            </summary>
+        </member>
+        <member name="P:Library.Models.ReviewViewModel.ReviewDate">
+            <summary>
+            Date of posting review
+            </summary>
+        </member>
+        <member name="M:Library.Models.ReviewViewModel.#ctor(System.String,System.String,System.DateTime)">
+            <summary>
+            constructor
+            </summary>
+            <param name="reviewText"> text of review</param>
+            <param name="reviewName"> author`s name</param>
+            <param name="reviewDate">Date of posting</param>
+        </member>
+        <member name="M:Library.Models.ReviewViewModel.#ctor">
+            <summary>
+            no parameter constructor
+            </summary>
+        </member>
+        <member name="T:Library.Util.AssayModule">
+            <summary>
+            assay module binding
+            </summary>
+        </member>
+        <member name="M:Library.Util.AssayModule.Load">
+            <summary>
+            bind method for assay
+            </summary>
+        </member>
+        <member name="T:Library.Util.FormModule">
+            <summary>
+            form module binding
+            </summary>
+        </member>
+        <member name="M:Library.Util.FormModule.Load">
+            <summary>
+            bind method for form
+            </summary>
+        </member>
+        <member name="T:Library.Util.ReviewModule">
+            <summary>
+            Review module binding
+            </summary>
+        </member>
+        <member name="M:Library.Util.ReviewModule.Load">
+            <summary>
+            bind method for review
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,30 @@
+﻿@using Library.Helpers
+@{
+    ViewBag.Title = "Result";
+}
+
+<div>
+    <h3>Result</h3>
+    <br />
+    <div>
+        <p>Name - @Model.Name</p>
+        <p>Surname - @Model.Surname</p>
+        @if (string.IsNullOrEmpty(Model.Country))
+        {
+            <p>Country is not selected</p>
+        }
+        else
+        {
+            <p>Country - @Model.Country</p>
+        }
+        <p>List of smths:</p>
+        @if (((List<string>)Model.smths).Any())
+        {
+            @Html.CreateList(Model.smths as List<string>)
+        }
+        else
+        {
+            <p>not selected</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Library.BLL</name>
+    </assembly>
+    <members>
+        <member name="T:Library.BLL.BLLEntities.BLLAssay">
+            <summary>
+            Bll Assay on a home page
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLAssay.Author">
+            <summary>
+            Author of an assay
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLAssay.Title">
+            <summary>
+            title of an assay
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLAssay.Text">
+            <summary>
+            The main part
+            </summary>
+        </member>
+        <member name="M:Library.BLL.BLLEntities.BLLAssay.#ctor">
+            <summary>
+            no parameter constructor
+            </summary>
+        </member>
+        <member name="M:Library.BLL.BLLEntities.BLLAssay.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Main constructor
+            </summary>
+            <param name="author">autor of the assay</param>
+            <param name="title">assay`s title</param>
+            <param name="text">a main part</param>
+        </member>
+        <member name="T:Library.BLL.BLLEntities.BLLForm">
+            <summary>
+            BLL form request
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLForm.Name">
+            <summary>
+            A name of person
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLForm.Surname">
+            <summary>
+            A surname of person
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLForm.Country">
+            <summary>
+            Country that person is from
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLForm.smths">
+            <summary>
+            list of some values
+            </summary>
+        </member>
+        <member name="T:Library.BLL.BLLEntities.BLLReview">
+            <summary>
+            Review object class
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLReview.ReviewText">
+            <summary>
+            Text of review
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLReview.ReviewName">
+            <summary>
+            A name of author the review
+            </summary>
+        </member>
+        <member name="P:Library.BLL.BLLEntities.BLLReview.ReviewDate">
+            <summary>
+            Date of posting review
+            </summary>
+        </member>
+        <member name="M:Library.BLL.BLLEntities.BLLReview.#ctor(System.String,System.String,System.DateTime)">
+            <summary>
+            constructor
+            </summary>
+            <param name="reviewText"> text of review</param>
+            <param name="reviewName"> author`s name</param>
+            <param name="reviewDate">Date of posting</param>
+        </member>
+        <member name="M:Library.BLL.BLLEntities.BLLReview.#ctor">
+            <summary>
+            no parameter constructor
+            </summary>
+        </member>
+        <member name="T:Library.BLL.Exceptions.ValidationException">
+            <summary>
+            Castom exception for validation
+            </summary>
+        </member>
+        <member name="P:Library.BLL.Exceptions.ValidationException.Property">
+            <summary>
+            Property
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Exceptions.ValidationException.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+            <param name="prop"></param>
+        </member>
+        <member name="T:Library.BLL.Infrastructure.ServiceModule">
+            <summary>
+            Service module binding
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Infrastructure.ServiceModule.#ctor(System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:Library.BLL.Infrastructure.ServiceModule.Load">
+            <summary>
+            bind method for unit of work
+            </summary>
+        </member>
+        <member name="T:Library.BLL.Interfaces.IAssayService">
+            <summary>
+            Assay service
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IAssayService.Create(Library.BLL.BLLEntities.BLLAssay)">
+            <summary>
+            Method for creating an item
+            </summary>
+            <param name="item">Item that will be inserted to database</param>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IAssayService.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get a item by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IAssayService.GetAll">
+            <summary>
+            Get all items
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IAssayService.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:Library.BLL.Interfaces.IFormService">
+            <summary>
+            Form service
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IFormService.Create(Library.BLL.BLLEntities.BLLForm)">
+            <summary>
+            Method for creating an item
+            </summary>
+            <param name="item">Item that will be inserted to database</param>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IFormService.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get a item by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IFormService.GetAll">
+            <summary>
+            Get all items
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IFormService.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:Library.BLL.Interfaces.IReviewService">
+            <summary>
+            Review service
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IReviewService.Create(Library.BLL.BLLEntities.BLLReview)">
+            <summary>
+            Method for creating an item
+            </summary>
+            <param name="item">Item that will be inserted to database</param>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IReviewService.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get a item by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IReviewService.GetAll">
+            <summary>
+            Get all items
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Library.BLL.Interfaces.IReviewService.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:Library.BLL.Services.AssayService">
+            <summary>
+            Servise for assays
+            </summary>
+        </member>
+        <member name="P:Library.BLL.Services.AssayService.DB">
+            <summary>
+            Assay repository
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Services.AssayService.#ctor(Library.DLL.Services.UnitOfWork)">
+            <summary>
+            Construcor
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Services.AssayService.GetAll">
+            <summary>
+            Get all assays
+            </summary>
+            <returns>a list of assays</returns>
+        </member>
+        <member name="M:Library.BLL.Services.AssayService.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get an assay by id
+            </summary>
+            <param name="id"> the id of item</param>
+            <returns>Assay</returns>
+        </member>
+        <member name="M:Library.BLL.Services.AssayService.Create(Library.BLL.BLLEntities.BLLAssay)">
+            <summary>
+            Create an assay 
+            </summary>
+            <param name="item">the assay</param>
+        </member>
+        <member name="M:Library.BLL.Services.AssayService.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:Library.BLL.Services.FormService">
+            <summary>
+            Servise for forms
+            </summary>
+        </member>
+        <member name="P:Library.BLL.Services.FormService.DB">
+            <summary>
+            Form repository
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Services.FormService.#ctor(Library.DLL.Services.UnitOfWork)">
+            <summary>
+            Construcor
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Services.FormService.GetAll">
+            <summary>
+            Get all forms
+            </summary>
+            <returns>a list of forms</returns>
+        </member>
+        <member name="M:Library.BLL.Services.FormService.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get a form by id
+            </summary>
+            <param name="id"> the id of item</param>
+            <returns>Form</returns>
+        </member>
+        <member name="M:Library.BLL.Services.FormService.Create(Library.BLL.BLLEntities.BLLForm)">
+            <summary>
+            Create a form 
+            </summary>
+            <param name="item">the form</param>
+        </member>
+        <member name="M:Library.BLL.Services.FormService.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="T:Library.BLL.Services.ReviewService">
+            <summary>
+            Servise for reviews
+            </summary>
+        </member>
+        <member name="P:Library.BLL.Services.ReviewService.DB">
+            <summary>
+            Review repository
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Services.ReviewService.#ctor(Library.DLL.Services.UnitOfWork)">
+            <summary>
+            Construcor
+            </summary>
+        </member>
+        <member name="M:Library.BLL.Services.ReviewService.GetAll">
+            <summary>
+            Get all reviews
+            </summary>
+            <returns>a list of reviews</returns>
+        </member>
+        <member name="M:Library.BLL.Services.ReviewService.Get(System.Nullable{System.Int32})">
+            <summary>
+            Get a review by id
+            </summary>
+            <param name="id"> the id of item</param>
+            <returns>Review</returns>
+        </member>
+        <member name="M:Library.BLL.Services.ReviewService.Create(Library.BLL.BLLEntities.BLLReview)">
+            <summary>
+            Create a review 
+            </summary>
+            <param name="item">the review</param>
+        </member>
+        <member name="M:Library.BLL.Services.ReviewService.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+    </members>
+</doc>
